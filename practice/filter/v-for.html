@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+     <ul>
+         <template v-for="book in books">
+             <li>{{book.name}}</li>
+             <li>{{book.auth}}</li>
+         </template>
+     </ul>
+</div>
+<script src="../../node_modules/vue/dist/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            books:[
+                {
+                   name:'fanjava' ,
+                    auth:'11'
+                },
+                {
+                    name:'dan' ,
+                    auth:'22'
+                },
+                {
+                    name:'pingjava' ,
+                    auth:'33'
+                }
+            ]
+        }
+    })
+    app.books=app.books.filter(function(item){
+        return item.name.match(/java/);
+    })
+</script>
+</body>
+</html>
