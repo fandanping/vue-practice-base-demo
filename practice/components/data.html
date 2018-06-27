@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <my-component></my-component>
+    <my-component></my-component>
+    <my-component></my-component>
+</div>
+<script src="../../node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    /**
+     * 组件中的 data 必须是函数，然后将数据 return 出去。
+
+     每个组件都是相互独立的，如果他们共用一个对象，在更改一个组件数据的时候会影响其他组件，如果是函数的话，每个组件都有自己独立的数据，相互之间不影响
+     */
+    Vue.component("my-component", {
+        template: "<button @click='counter++'>{{ counter }}</button>",
+        data: function () {
+            return {
+                counter: 0
+            };
+        }
+    });
+
+    var app = new Vue({
+        el: "#app"
+    });
+</script>
+
+
+
+</body>
+</html>

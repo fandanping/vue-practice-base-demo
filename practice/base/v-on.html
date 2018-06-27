@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div  id="app">
+    <p v-show="show">show</p>
+    <button @click="show=false">click</button>
+</div>
+
+<script src="../../node_modules/vue/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            show:true
+        }
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+如果想显示｛｛｝｝标签，而不进行替换 使用 v-pre 过这个元素 它的子元素 编译过程，
+<span v-pre ＞｛｛这里的内容是不会被编译的}}＜／ span>
+
+
+-->
+<body id="app">
+<span v-pre> {{message}}</span>
+
+<script src="../../node_modules/vue/dist/vue.js"></script>
+
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+            message:'fan'
+        }
+
+    })
+</script>
+</body>
+</html>

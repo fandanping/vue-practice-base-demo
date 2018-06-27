@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+<body>
+<div id="root">
+      <test-template>
+              <p slot='fan-slot'>fffffffffffffffffffffffff</p>
+              <p slot='dan-slot'>3333333333333333333333333</p>
+      </test-template>
+</div>
+<script src="../../node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+
+</script>
+     new Vue({
+         el:"#root",
+         &lt;!&ndash;components:{
+           'test-template':{
+             template:`
+              <p>hello</p>
+              <p>world</p>
+              <slot name="fan-slot"></slot>
+              <slot name="dan-slot"></slot>
+            `
+            }
+             }&ndash;&gt;
+        components:{
+        'test-template':{
+        template:`<div>
+            <h1>sunseekers(晴窗一扇)</h1>
+            <p>一旦出发，必须到达</p>
+            <slot name='fan-slot'></slot>
+            <slot name='dan-slot'></slot>
+        </div>`
+        }
+        }
+     })
+
+
+</body>
+-->
+<body>
+<div id='slot'>
+    <template-item>
+        <!--加个 slot 属性对于 slot 的 name 属性
+            告诉他在哪个位置使用哪个 slot-->
+        <ul slot='ul'>
+            <li>2018.01.17 今天是我生日</li>
+            <li>自己祝自己生日快乐</li>
+        </ul>
+        <ol slot='ol'>
+            <li>湖南的冬天好冷，刺骨的冷</li>
+            <li>想去一个没有冬天的城市</li>
+        </ol>
+    </template-item>
+</div>
+<script src="../../node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:'#slot',
+        data:{
+        },
+        components:{
+            'template-item':{
+                template:`<div>
+     				<h1>sunseekers(晴窗一扇)</h1>
+     				<p>一旦出发，必须到达</p>
+     				<slot name='ol'></slot>
+     				<slot name='ul'></slot>
+     				</div>
+     				`
+            }
+        }
+    })
+</script>
+</body>
+
+
+</html>

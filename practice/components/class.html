@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <my-comp :class="{'active':isActive}"></my-comp>
+</div>
+<script src="../../node_modules/vue/dist/vue.js"></script>
+
+<script>
+    Vue.component('my-comp',{
+        template:'<p class="haha">lllllllllllllll</p>'
+    })
+    var app=new Vue({
+        el:'#app',
+        data:{
+            isActive:true
+        }
+    })
+</script>
+</body>
+</html>

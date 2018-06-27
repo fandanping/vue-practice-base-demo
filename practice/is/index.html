@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="root">
+    <ul>
+        <li is='todo-item'
+            v-for='(todo,index) in items' 	:key='index'
+            :title='todo.title' @remove='move'></li>
+    </ul>
+</div>
+<script src="../../node_modules/vue/dist/vue.js"></script>
+<script type="text/javascript">
+    new Vue({
+        el:'#root',
+        data:{
+            items:[
+                {title:'fan'},
+                {title:'dan'},
+                {title:'ping'}
+
+            ]
+        },
+        components:{
+            'todo-item':{
+                   props:['title'],
+                template :`<li>
+	      {{ title }}
+	      <button @click="$emit('remove')">X</button>
+	    	</li>`
+            }
+        },
+        methods:{
+            move(){
+                return this.items.splice(this.items.index,1);
+            }
+        }
+    })
+</script>
+
+
+
+</body>
+</html>

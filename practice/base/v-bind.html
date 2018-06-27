@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <div :class="classes">1111</div>
+</div>
+
+<script src="../../node_modules/vue/dist/vue.js"></script>
+<script>
+    var app=new Vue({
+        el:'#app',
+        data:{
+             isActive:true
+        },
+        computed:{
+            classes(){
+                return{
+                    'active':this.isActive
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>
